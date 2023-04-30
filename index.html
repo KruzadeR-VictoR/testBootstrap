@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registation Form</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <style>
+      *{
+       padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+  }
+  body{
+   
+      margin: 0;
+      display: flex;
+   }
+  
+  .header{
+    overflow: hidden;
+    background-color: white;
+  }
+  .header h1{
+    float: left;
+    display: block;
+    text-align: center;
+    margin: 5px;
+    font-size: 30px;
+  }
+  #add-new-btn{
+    float: right;
+    display: flex;
+  }
+
+  .highlight td:not(:last-child){
+    background: yellow;
+  }
+  .highlight input{
+    background: yellow;
+  }
+    </style>
+
+<script>
+  function AddFunc(){      
+      const tableRow=document.querySelector(".toggle")
+      console.log(tableRow);
+      // tableRow.style.background="yellow"
+      tableRow.classList.add("highlight")
+  }
+
+  function edit(){
+    const buttonAdd = document.getElementById("buttonEdit");
+    buttonAdd.style.display = "inline";
+    const buttonEdit = document.getElementById("buttonAdd");
+    buttonEdit.style.display = "none";
+  }
+  
+  function xyz() {
+    swal("Are you sure you want to do this?", {
+buttons: ["NO", "YES"],
+});
+}
+</script>
+
+</head>
+<body>
+	<div class="header">
+		<h1>Employee Details</h1>
+    <button type="button" class="btn btn-success" id="add-new-btn" onclick="AddFunc()"><i class="glyphicon glyphicon-plus"></i> Add new</button>
+		
+         <table class="table table-bordered" >   
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Department</th>
+              <th>Phone</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+            <tr class="toggle">
+              <td><input type="text"placeholder="Test" ></td>
+              <td><input type="text"placeholder="Test 1"></td>
+              <td><input type="text"placeholder="1234567890"></td>
+              <td class="action-icons">
+                <button type="button" style="display: none" class="btn btn-warning edit-row-btn" id="buttonEdit"onclick="container()"><i class="glyphicon glyphicon-align-justify"></i></button>
+                <button type="button" class="btn btn-primary edit-row-btn" id="buttonAdd"onclick="edit()"><i class="glyphicon glyphicon-pencil"></i></button>
+                <button type="button" class="btn btn-danger delete-row-btn"id="btnclick" onclick="xyz()"><i class="glyphicon glyphicon-trash"></i></button>
+              </td>
+            </tr>
+          </body>
+        </table>
+      </div>  
+    </div>  
